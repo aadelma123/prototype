@@ -19,6 +19,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3/s3manager"
 )
 
+// CSV file definition
 type ColumnsType struct {
 	TransactionID   int `json:"transactionID"`
 	TransactionDate int `json:"transactionDate"`
