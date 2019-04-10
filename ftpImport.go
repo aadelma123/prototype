@@ -85,7 +85,7 @@ func ftpImporttHandler(ctx context.Context, s3Event events.S3Event) (string, err
 		// Transform the file and display API json
 		payload := transformFile(fileName, companyConfig)
 		// Call the API with the JSON payload from above
-		callApi(payload)
+		callAPI(payload)
 		// Move the file to the archive bucket
 		archiveS3(bucket, item, sess, svc)
 	}
@@ -172,7 +172,7 @@ func transformFile(fileName string, companyConfig Company) *Payload {
 	return payload
 }
 
-func callApi(payload *Payload) {
+func callAPI(payload *Payload) {
 	// Display the JSON payload
 	payloadpDisp, _ := json.Marshal(&payload)
 	fmt.Println("DEBUG JSON Payload", string(payloadpDisp))
